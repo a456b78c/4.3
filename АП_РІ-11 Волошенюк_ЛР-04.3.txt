@@ -1,0 +1,42 @@
+#include <iostream>
+#include <iomanip>
+#include <cmath>
+
+using namespace std;
+
+int main()
+{
+	double x, xp, xk, dx, a, b, c, F;
+	double e = exp(1.0);
+	cout << "xp = "; cin >> xp;
+	cout << "xk = "; cin >> xk;
+	cout << "dx = "; cin >> dx;
+	cout << "a = "; cin >> a;
+	cout << "b = "; cin >> b;
+	cout << "c = "; cin >> c;
+	cout << fixed;
+	cout << "---------------------------" << endl;
+	x = xp;
+	
+	while (x <= xk)
+	{
+		if (a < 0 && c != 0)
+		{
+			F = a * x * x + b * x + c;
+		}
+
+		else if (a > 0 && c == 0)
+		{
+			F = (-a / (x - c));
+		}
+		else {
+			F = (a * (x + c));
+		}
+		
+		x += dx;
+	}
+	cout << "F =" << F << endl;
+	cout << "---------------------------" << endl;
+	return 0;
+}
+
